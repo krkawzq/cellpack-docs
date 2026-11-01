@@ -1,0 +1,247 @@
+{
+  "simulated": false,
+  "run": "/mnt/shared-storage-user/dnacoding/wangzhongqi/Code/Project/scload/outputs/cellpack/billion-cell/raid0-online-1t-w1b-e5-thpoff-20261031-022112",
+  "receipt_status": "complete",
+  "paper_eligible": true,
+  "epochs": [
+    {
+      "epoch": 1,
+      "cells": 1000000000,
+      "end_seconds": 453.7769324053079,
+      "seconds": 453.7769324053079,
+      "cells_per_second": 2203725.946798046,
+      "cells_total": 1000000000
+    },
+    {
+      "epoch": 2,
+      "cells": 1000000000,
+      "end_seconds": 726.1765476055443,
+      "seconds": 272.39961520023644,
+      "cells_per_second": 3671077.1388752386,
+      "cells_total": 2000000000
+    },
+    {
+      "epoch": 3,
+      "cells": 1000000000,
+      "end_seconds": 995.9137923773378,
+      "seconds": 269.7372447717935,
+      "cells_per_second": 3707311.538849715,
+      "cells_total": 3000000000
+    },
+    {
+      "epoch": 4,
+      "cells": 1000000000,
+      "end_seconds": 1266.7420345684513,
+      "seconds": 270.82824219111353,
+      "cells_per_second": 3692377.101847217,
+      "cells_total": 4000000000
+    },
+    {
+      "epoch": 5,
+      "cells": 1000000000,
+      "end_seconds": 1543.8945670891553,
+      "seconds": 277.15253252070397,
+      "cells_per_second": 3608121.458985036,
+      "cells_total": 5000000000
+    }
+  ],
+  "metadata_open_seconds": 243.72573206573725,
+  "first_batch_seconds": 106.12805303558707,
+  "process_peak_rss_bytes": 1288783187968,
+  "native_stats": {
+    "accesses": 5000000000,
+    "elapsed": 1538.697106492,
+    "setup_elapsed": 5.586773592,
+    "plan_startup_wait": 4823.557019281,
+    "plan_stream_wait": 0.0,
+    "read_bytes": 5006159421440,
+    "io_requests": 1156976052,
+    "page_hits": 4002788260,
+    "page_reads": 1222206890,
+    "row_hits": 0,
+    "budget_peak_bytes": 999624822784,
+    "cache_copy_bytes": 0,
+    "output_stalls": 83647855,
+    "decoded_rows": 5000000000,
+    "mapped_rows": 5000000000,
+    "process_calls": 0,
+    "written_bytes": 40960000000000,
+    "temp_published": 123008277,
+    "admitted": 919962947,
+    "promoted": 32,
+    "admission_misses": 0,
+    "budget_refused": 0,
+    "released": 919962979,
+    "images_admitted": 0,
+    "images_released": 0,
+    "images_early": 0,
+    "evicted": 0,
+    "deferred": 9211,
+    "waited": 1312,
+    "frame_fallbacks": 0,
+    "image_fallbacks": 0,
+    "block_reads": 0,
+    "block_refused": 0,
+    "window_stalls": 41801042,
+    "plan_stalls": 4569735,
+    "plan_startup_stalls": 4569735,
+    "plan_stream_stalls": 0,
+    "peak_span": 13353,
+    "io": {
+      "requests": 1156976052,
+      "requested_bytes": 5006159421440,
+      "read_bytes": 5006159421440,
+      "latency_ns": 0,
+      "sizes": [
+        1092885902,
+        62962190,
+        1126529,
+        1377,
+        54,
+        0,
+        0
+      ]
+    },
+    "phases": {
+      "claim": 0.0,
+      "resolve": 0.0,
+      "publish": 0.0,
+      "decode": 0.0,
+      "map": 0.0,
+      "process": 0.0,
+      "admit": 0.0,
+      "release": 0.0,
+      "collect": 0.0,
+      "io_wait": 0.0,
+      "idle": 0.0,
+      "submit": 0.0,
+      "start": 0.0,
+      "total": 0.0
+    },
+    "policy": {
+      "admit_calls": 0,
+      "hit_calls": 0,
+      "insert_calls": 0,
+      "admit": 0.0,
+      "hit": 0.0,
+      "insert": 0.0,
+      "lock_wait": 0.0
+    },
+    "online": {
+      "accesses": 5000000000,
+      "segments": 19074,
+      "page_admissions": 919962979,
+      "row_admissions": 0,
+      "block_reads": 0,
+      "image_share": 0.0,
+      "piloted": true,
+      "horizon": 1000000000,
+      "modeled_seconds": 1112.9483024266333,
+      "worker_seconds": 48295.8058732243,
+      "pilot_seconds": 35.316644075,
+      "compile_seconds": 224.42318522999994,
+      "waiting_seconds": 1274.210524175,
+      "stage_seconds": {
+        "cells": 108.459420915,
+        "cold": 711.527703084,
+        "images": 0.0,
+        "base": 0.010556581,
+        "scatter": 334.831912149,
+        "pages": 2659.752871567,
+        "finish": 334.540510874,
+        "model": 901.327471094,
+        "publish": 1433.062206578
+      }
+    },
+    "outputs": {
+      "panel": {
+        "map_time": 0.0,
+        "process_time": 0.0,
+        "process_profile": [],
+        "accesses": 5000000000,
+        "decoded_rows": 5000000000,
+        "row_hits": 0,
+        "process_calls": 0
+      }
+    }
+  },
+  "output_checks": [
+    {
+      "position": 0,
+      "cells": 8,
+      "sha256": "391f84818929494d9330fb549cd789cf762a1f4c2cd55f4c866ec28884087bda"
+    },
+    {
+      "position": 500000000,
+      "cells": 8,
+      "sha256": "c34df7e3e3f1d542306e11381e5b6c0a9851e05545c7d0e54766ad3dc45775c5"
+    },
+    {
+      "position": 999999744,
+      "cells": 8,
+      "sha256": "8acc100eff8eda69079f410e59267bd069db43856e82640f5f22ec3bdf65da04"
+    },
+    {
+      "position": 1000000000,
+      "cells": 8,
+      "sha256": "f669148233dc922d381c58d26efe6e0a2da40830aa8fd71e76f7f9703d5f4fd2"
+    },
+    {
+      "position": 1500000000,
+      "cells": 8,
+      "sha256": "c68560690ddf2692bc4d170e7f7ca84bc5c42fcb2218f0e46b914ab63cf83bd2"
+    },
+    {
+      "position": 1999999744,
+      "cells": 8,
+      "sha256": "877ab8de1d8df31f29bb0d58d6366f6a98e706727984b7efb31aee5ccaf2e07e"
+    },
+    {
+      "position": 2000000000,
+      "cells": 8,
+      "sha256": "a0e0a4703663b7b5b90640c5ea90f0d134ba9021c1409ce27e6567f5afdbda3c"
+    },
+    {
+      "position": 2500000000,
+      "cells": 8,
+      "sha256": "743a489bcd0edcf111bd5cb354512af5b3dd43ccc281fa526fe79c736bfded78"
+    },
+    {
+      "position": 2999999744,
+      "cells": 8,
+      "sha256": "e3df7c517b1a46d893209d6d6fa10cab9ce6b7582b178442b8e3110e22eda4f8"
+    },
+    {
+      "position": 3000000000,
+      "cells": 8,
+      "sha256": "e9d969ca626fd3d395accdf71b68622bb2e44255cd360d465671e45e3fe7ff9e"
+    },
+    {
+      "position": 3500000000,
+      "cells": 8,
+      "sha256": "08c13f40da7e281146fb6c2eac49e24b649fdf418873dcd0b6bf84db8347c881"
+    },
+    {
+      "position": 3999999744,
+      "cells": 8,
+      "sha256": "ac510261994fec896c46523b65657f2f8fa447378899c9e6073eb7a2ddb6c594"
+    },
+    {
+      "position": 4000000000,
+      "cells": 8,
+      "sha256": "7bce237a6be32217114bebdaa2b2e3742cc54ebc6c0d1e97653be0ec90186a59"
+    },
+    {
+      "position": 4500000000,
+      "cells": 8,
+      "sha256": "8eaa59c0c7fdf7cb52440767bbcf60b25f27041f95a083b0619c9d4f769dd9b6"
+    },
+    {
+      "position": 4999999744,
+      "cells": 8,
+      "sha256": "dfb95375d30937c19905660598e482215126a6c8da106d04cbc73f58bf94d4ed"
+    }
+  ],
+  "device_counter": "md127 sectors read x 512; host-wide device scope, not process-exclusive",
+  "cells_consumed": 5000000000
+}

@@ -1,0 +1,590 @@
+{
+ "source": {
+  "trace": "outputs/fig-loader-window/pages0.2.jsonl",
+  "measured": "outputs/cache-policy/formal-20261029/formal-loader.jsonl",
+  "policy": "cellpack",
+  "fraction": 0.2,
+  "n_cells": 10000000,
+  "n_accesses": 40000000,
+  "residencies": 10568663,
+  "cache_bytes": 4069064704
+ },
+ "costs": {
+  "read": 186.59378158255143,
+  "submit": 2.928491295210808,
+  "decode_element": 0.001977469781885907,
+  "map_element": 0.0012857288394234137,
+  "process": 12.632330115299577,
+  "fixed": 2.1116815962385873,
+  "cells_per_second": 1306746.3997715858,
+  "workers": 32
+ },
+ "workers": 3,
+ "depth": 4,
+ "distance": 12,
+ "slot_cells": 4,
+ "slots": 4,
+ "t_star": 289.137,
+ "frontier": 25178039,
+ "next": 25178051,
+ "window": [
+  {
+   "position": 25178032,
+   "cell": 5681078,
+   "dataset": "8fbed309-d3d4-441b-b3ff-e2dcbcec2d35",
+   "local": 15423,
+   "elements": 2708,
+   "bytes": 2290,
+   "pages": [
+    [
+     2814597,
+     "admit"
+    ]
+   ],
+   "kind": "admit",
+   "worker": 0,
+   "claim": 0.0,
+   "read": [
+    2.928,
+    189.522
+   ],
+   "cpu": [
+    196.314,
+    219.895
+   ],
+   "done": 219.895,
+   "admitted": [
+    710759
+   ],
+   "released": []
+  },
+  {
+   "position": 25178033,
+   "cell": 4082441,
+   "dataset": "5e717147-0f75-4de1-8bd2-6fda01b8d75f",
+   "local": 533,
+   "elements": 1777,
+   "bytes": 1446,
+   "pages": [
+    [
+     1991828,
+     "admit"
+    ]
+   ],
+   "kind": "admit",
+   "worker": 1,
+   "claim": 0.0,
+   "read": [
+    2.928,
+    189.522
+   ],
+   "cpu": [
+    189.522,
+    210.065
+   ],
+   "done": 210.065,
+   "admitted": [
+    450418
+   ],
+   "released": []
+  },
+  {
+   "position": 25178034,
+   "cell": 5870145,
+   "dataset": "949ec7fc-ac54-47c9-bb6f-ee9e67688cce",
+   "local": 1948,
+   "elements": 5590,
+   "bytes": 3674,
+   "pages": [
+    [
+     2940600,
+     "hit"
+    ]
+   ],
+   "kind": "hit",
+   "worker": 2,
+   "claim": 0.0,
+   "read": null,
+   "cpu": [
+    0.0,
+    32.985
+   ],
+   "done": 32.985,
+   "admitted": [],
+   "released": [
+    1011307
+   ]
+  },
+  {
+   "position": 25178035,
+   "cell": 6659238,
+   "dataset": "a4157949-6f2a-40e2-b960-63f6e2bde918",
+   "local": 5502,
+   "elements": 4380,
+   "bytes": 3096,
+   "pages": [
+    [
+     3307926,
+     "read"
+    ]
+   ],
+   "kind": "read",
+   "worker": 1,
+   "claim": 2.928,
+   "read": [
+    5.857,
+    192.451
+   ],
+   "cpu": [
+    210.065,
+    239.102
+   ],
+   "done": 239.102,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178036,
+   "cell": 9389048,
+   "dataset": "f0f0d7c4-3bec-428e-9539-c99d36548d96",
+   "local": 11370,
+   "elements": 1661,
+   "bytes": 1492,
+   "pages": [
+    [
+     4653749,
+     "hit"
+    ]
+   ],
+   "kind": "hit",
+   "worker": 1,
+   "claim": 5.857,
+   "read": null,
+   "cpu": [
+    5.857,
+    26.021
+   ],
+   "done": 26.021,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178037,
+   "cell": 6156093,
+   "dataset": "9a281de7-cee5-4e80-8584-1929f46f152f",
+   "local": 8104,
+   "elements": 4547,
+   "bytes": 3440,
+   "pages": [
+    [
+     3081033,
+     "read"
+    ]
+   ],
+   "kind": "read",
+   "worker": 1,
+   "claim": 26.021,
+   "read": [
+    28.95,
+    215.543
+   ],
+   "cpu": [
+    239.102,
+    268.684
+   ],
+   "done": 268.684,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178038,
+   "cell": 6369860,
+   "dataset": "9ea768a2-87ab-46b6-a73d-c4e915f25af3",
+   "local": 16299,
+   "elements": 2157,
+   "bytes": 1768,
+   "pages": [
+    [
+     3171796,
+     "hit"
+    ]
+   ],
+   "kind": "hit",
+   "worker": 2,
+   "claim": 146.61,
+   "read": null,
+   "cpu": [
+    146.61,
+    168.393
+   ],
+   "done": 168.393,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178039,
+   "cell": 8034506,
+   "dataset": "d288b10a-643e-44bd-b451-96e9588b2ee5",
+   "local": 7064,
+   "elements": 6812,
+   "bytes": 4534,
+   "pages": [
+    [
+     3967088,
+     "hit"
+    ],
+    [
+     3967089,
+     "read"
+    ]
+   ],
+   "kind": "read",
+   "worker": 2,
+   "claim": 168.393,
+   "read": [
+    171.322,
+    357.915
+   ],
+   "cpu": [
+    357.915,
+    394.888
+   ],
+   "done": 394.888,
+   "admitted": [],
+   "released": [
+    599407
+   ]
+  },
+  {
+   "position": 25178040,
+   "cell": 8090650,
+   "dataset": "d3cb449b-c2b1-4b50-a7f1-21203535fe61",
+   "local": 30440,
+   "elements": 2375,
+   "bytes": 1798,
+   "pages": [
+    [
+     4016192,
+     "admit"
+    ]
+   ],
+   "kind": "admit",
+   "worker": 2,
+   "claim": 171.322,
+   "read": [
+    174.25,
+    360.844
+   ],
+   "cpu": [
+    394.888,
+    417.382
+   ],
+   "done": 417.382,
+   "admitted": [
+    10271899
+   ],
+   "released": []
+  },
+  {
+   "position": 25178041,
+   "cell": 2697041,
+   "dataset": "4023a2bc-6325-47db-bfdf-9639e91042c2",
+   "local": 2672,
+   "elements": 5415,
+   "bytes": 3618,
+   "pages": [
+    [
+     1229415,
+     "hit"
+    ]
+   ],
+   "kind": "hit",
+   "worker": 2,
+   "claim": 174.25,
+   "read": null,
+   "cpu": [
+    174.25,
+    206.664
+   ],
+   "done": 206.664,
+   "admitted": [],
+   "released": [
+    1382072
+   ]
+  },
+  {
+   "position": 25178042,
+   "cell": 5024872,
+   "dataset": "7db0c178-b0a4-442f-ba54-e9e1633a84bb",
+   "local": 3653,
+   "elements": 6766,
+   "bytes": 4566,
+   "pages": [
+    [
+     2517641,
+     "admit"
+    ],
+    [
+     2517642,
+     "admit"
+    ]
+   ],
+   "kind": "admit",
+   "worker": 2,
+   "claim": 206.664,
+   "read": [
+    209.593,
+    396.187
+   ],
+   "cpu": [
+    417.382,
+    454.205
+   ],
+   "done": 454.205,
+   "admitted": [
+    680786,
+    9261
+   ],
+   "released": []
+  },
+  {
+   "position": 25178043,
+   "cell": 4140600,
+   "dataset": "5fde5c9c-5b1e-4df5-982a-3f8e7635161f",
+   "local": 9540,
+   "elements": 1295,
+   "bytes": 1180,
+   "pages": [
+    [
+     2015307,
+     "hit"
+    ]
+   ],
+   "kind": "hit",
+   "worker": 2,
+   "claim": 209.593,
+   "read": null,
+   "cpu": [
+    209.593,
+    228.563
+   ],
+   "done": 228.563,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178044,
+   "cell": 1927011,
+   "dataset": "31f04740-c712-4c4b-a3f8-55c0506b3034",
+   "local": 6490,
+   "elements": 5349,
+   "bytes": 3608,
+   "pages": [
+    [
+     835126,
+     "hit"
+    ]
+   ],
+   "kind": "hit",
+   "worker": 0,
+   "claim": 219.895,
+   "read": null,
+   "cpu": [
+    219.895,
+    252.093
+   ],
+   "done": 252.093,
+   "admitted": [],
+   "released": [
+    7964237
+   ]
+  },
+  {
+   "position": 25178045,
+   "cell": 9660990,
+   "dataset": "f7c1c579-2dc0-47e2-ba19-8165c5a0e353",
+   "local": 66157,
+   "elements": 235,
+   "bytes": 260,
+   "pages": [
+    [
+     4793062,
+     "hit"
+    ]
+   ],
+   "kind": "hit",
+   "worker": 2,
+   "claim": 228.563,
+   "read": null,
+   "cpu": [
+    228.563,
+    244.073
+   ],
+   "done": 244.073,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178046,
+   "cell": 1986735,
+   "dataset": "34229bdc-a895-4394-8820-574e4028d8c6",
+   "local": 678,
+   "elements": 4783,
+   "bytes": 3176,
+   "pages": [
+    [
+     867148,
+     "read"
+    ]
+   ],
+   "kind": "read",
+   "worker": 2,
+   "claim": 244.073,
+   "read": [
+    247.002,
+    433.596
+   ],
+   "cpu": [
+    454.205,
+    484.557
+   ],
+   "done": 484.557,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178047,
+   "cell": 5445533,
+   "dataset": "8623d55f-d91c-41c2-ae68-ed2072fd268d",
+   "local": 12272,
+   "elements": 1149,
+   "bytes": 1012,
+   "pages": [
+    [
+     2694467,
+     "hit"
+    ]
+   ],
+   "kind": "hit",
+   "worker": 0,
+   "claim": 252.093,
+   "read": null,
+   "cpu": [
+    252.093,
+    270.587
+   ],
+   "done": 270.587,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178048,
+   "cell": 3707144,
+   "dataset": "589fe605-6d49-4abe-bff8-1675511c689a",
+   "local": 5260,
+   "elements": 3801,
+   "bytes": 2762,
+   "pages": [
+    [
+     1755336,
+     "read"
+    ]
+   ],
+   "kind": "read",
+   "worker": 1,
+   "claim": 268.684,
+   "read": [
+    271.612,
+    458.206
+   ],
+   "cpu": [
+    458.206,
+    485.353
+   ],
+   "done": 485.353,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178049,
+   "cell": 687881,
+   "dataset": "13149914-ea03-4f01-8bf6-b793b667127b",
+   "local": 8614,
+   "elements": 5499,
+   "bytes": 3762,
+   "pages": [
+    [
+     292207,
+     "read"
+    ]
+   ],
+   "kind": "read",
+   "worker": 0,
+   "claim": 270.587,
+   "read": [
+    273.515,
+    460.109
+   ],
+   "cpu": [
+    460.109,
+    492.798
+   ],
+   "done": 492.798,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178050,
+   "cell": 2999641,
+   "dataset": "456e8b9b-f872-488b-871d-94534090a865",
+   "local": 1816,
+   "elements": 849,
+   "bytes": 764,
+   "pages": [
+    [
+     1396423,
+     "hit"
+    ]
+   ],
+   "kind": "hit",
+   "worker": 1,
+   "claim": 271.612,
+   "read": null,
+   "cpu": [
+    271.612,
+    289.127
+   ],
+   "done": 289.127,
+   "admitted": [],
+   "released": []
+  },
+  {
+   "position": 25178051,
+   "cell": 3942766,
+   "dataset": "5c97eeeb-7e52-44b3-b010-b832b1f5424c",
+   "local": 65809,
+   "elements": 3776,
+   "bytes": 2872,
+   "pages": [
+    [
+     1902599,
+     "read"
+    ]
+   ],
+   "kind": "read",
+   "worker": 2,
+   "claim": 484.557,
+   "read": [
+    487.486,
+    674.079
+   ],
+   "cpu": [
+    674.079,
+    701.145
+   ],
+   "done": 701.145,
+   "admitted": [],
+   "released": []
+  }
+ ]
+}

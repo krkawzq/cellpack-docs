@@ -1,0 +1,5 @@
+# Best existing loader in the end-to-end loader benchmark (docs/bench-loader/results.md, data/final.json):
+# highest three-seed mean over every configuration and cache budget, per sampling mode.
+loader,sampling,cache,cells_per_s
+Lance,random,80G,85775
+annbatch,block,80G,70768

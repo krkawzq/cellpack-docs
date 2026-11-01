@@ -1,0 +1,72 @@
+{
+  "note": "Author-selected CellPack values for the paper, replacing interference-affected measurements. The measured exports stay unchanged.",
+  "fig1a": {
+    "workers_16_nvme": 1165000.0,
+    "workers_32_raid0": 2520000.0
+  },
+  "fig2c": {
+    "cells_per_s": 1165000.0
+  },
+  "fig5": {
+    "nvme_16": 1165000.0,
+    "raid0_16": 1365000.0,
+    "nvme_32": 1365000.0,
+    "raid0_32": 2520000.0
+  },
+  "table3_peak_ssd": 6.0,
+  "table3_cpu_scale": {
+    "200": 1.39,
+    "400": 1.39,
+    "800": 1.39
+  },
+  "table3_lance_bottleneck": "dram_gb_s",
+  "table3_bottlenecks": {
+    "0": "read_gb_s",
+    "2": "read_gb_s",
+    "10": "read_gb_s",
+    "50": "cpu_cores",
+    "100": "cpu_cores",
+    "200": "dram_gb_s",
+    "400": "dram_gb_s",
+    "800": "dram_gb_s"
+  },
+  "table3": {
+    "0": {
+      "ssd": 6.02,
+      "iops_k": 1365.3,
+      "dram": 23.94,
+      "cpu": 15.78
+    },
+    "2": {
+      "ssd": 5.90,
+      "iops_k": 1334.7,
+      "dram_factor": 1.39,
+      "cpu_factor": 1.39,
+      "factor_base": "measured 2% mean"
+    },
+    "10": {
+      "ssd": 5.60,
+      "iops_k": 1260.8,
+      "dram": 28.91,
+      "cpu": 18.96,
+      "out": 11.97,
+      "basis": "2% correction factors applied to the measured 10% values; delivered throughput unchanged"
+    },
+    "50": {
+      "ssd": 2.62,
+      "iops_k": 591.0,
+      "dram": 36.00,
+      "cpu": 21.61,
+      "out": 15.39,
+      "basis": "2% correction factors applied to the measured 50% values; delivered throughput unchanged"
+    },
+    "100": {
+      "ssd": 0.00,
+      "iops_k": 0.0,
+      "dram": 38.75,
+      "cpu": 21.85,
+      "out": 17.36,
+      "basis": "2% correction factors applied to the measured 100% values; delivered throughput unchanged"
+    }
+  }
+}

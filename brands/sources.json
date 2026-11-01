@@ -1,0 +1,11 @@
+{
+  "rust": {
+    "source": "https://github.com/rust-lang/rust-artwork/blob/main/logo/rust-logo.svg",
+    "sha256": "9a9549ea02d34dec3a610b8299f1b8121c7b10b14a44d3baec46ba15e9a06ca2"
+  },
+  "python": {
+    "source": "https://www.python.org/static/community_logos/python-logo-generic.svg",
+    "note": "Icon paths and gradients extracted without the wordmark.",
+    "source_sha256": "0305d6b2bb2e2761502d072e8e2db1248dbd1a99f51fb4b4bcb9e43c486ef6b2"
+  }
+}

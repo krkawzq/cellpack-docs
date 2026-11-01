@@ -1,0 +1,16 @@
+# Best variant per loader at a 20G cache budget (mean over seeds); 16 CPUs, random order,
+# sample output. nvme: final.json; raid0: final-cfs.json.
+# Fixed-panel CellPack measurements are reported separately in table_cellpack_loader.
+method,nvme,raid0,nvme_variant,raid0_variant
+AnnLoader,1163,1145,annloader (sparse converter),annloader (sparse converter)
+BioNeMo,32771,33132,scdl (readahead off),scdl (readahead off)
+HF Datasets,27411,27817,hfdatasets (readahead off),hfdatasets (readahead off)
+Lance,79135,77780,lance,lance
+MappedCollection,11763,11860,mappedcollection,mappedcollection
+Parquet,2806,2663,parquet (tuned rg128),parquet (tuned rg128)
+TileDB*,4795,5382,tiledbsoma (sparse X),tiledbsoma (sparse X)
+Zarr,3670,3495,zarr,zarr
+annbatch*,68190,70647,annbatch,annbatch
+cellarium*,50073,52510,cellarium,cellarium
+memmap,26165,26457,memmap (readahead off),memmap (readahead off)
+scDataset*,38859,37837,scdataset (sparse transform),scdataset (sparse transform)

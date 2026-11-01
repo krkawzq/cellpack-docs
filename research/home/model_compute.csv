@@ -1,0 +1,13 @@
+# One H200, synthetic GPU-resident inputs; from outputs/model_throughput/*/result.json
+model,parameters,batch,batch_unit,cells_per_step,dtype,gpu_cells_per_s
+scGPT,52370946,32,cells,32,fp16,836.5
+STATE SE,101127172,128,cells,1024,bf16,145.5
+STATE ST,84114592,8,cell sets,4096,fp32,227648.7
+UCE,104100097,96,cells,96,bf16,356.0
+GEARS,3342120,32,perturbed/control cell pairs,32,fp32,3339.0
+scVI,1345750,128,cells,128,fp32,262702.2
+CPA (Tahoe),5417590,2048,cells,2048,fp32,408954.3
+CPA (Replogle),10435529,2048,cells,2048,fp32,291966.6
+CellOT,50918,256,latent cells (11 source batches + 1 target batch),3072,fp32,573577.6
+CellFlow,143397156,1024,cells (source + target),40960,fp32,423579.5
+scDiffusion,3488384,128,latent cells,128,fp32,152240.2

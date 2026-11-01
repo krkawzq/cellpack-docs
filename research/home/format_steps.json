@@ -1,0 +1,1422 @@
+{
+ "description": "Byte cost of each CellPack design step, from native CSR to packed .cpk chunks, on 4096-cell chunks of CELLxGENE matrices (CellPack-lab/data/cellxgene-10m). Each sampled stored chunk is decoded to source CSR and re-encoded with the cellpack crate under option sets that enable one mechanism at a time. Steps are cumulative; ratio_vs_previous is each step over the one before.",
+ "exactness": "Every number is exact encoder output or exact arithmetic; nothing is estimated. The writer-default re-encode of all sampled chunks is bit-identical to the stored chunks (bit_exact_reencode=1 for all). Index and value section bytes are obtained by subtraction: index = record - header - raw values (values forced raw); value = record - header - index, with the gap model and gene order asserted identical across the runs. Steps 2-6 force the sparse layout (no dense records occurred under auto either).",
+ "method": {
+  "binary": "tmp/format-steps/src/main.rs",
+  "aggregate": "tmp/format-steps/aggregate.py",
+  "per_chunk": "tmp/format-steps/stats.jsonl",
+  "options": "max_lanes 32, lane_min 32, index/value thresholds 0.6, column-mode share 0.5 (crate defaults); chunks of 4096 rows; 4 KiB pages",
+  "note_versions": "stored files carry pre-reset version numbers (cpk 2, chunk 3); they are read directly with the version field patched, layouts unchanged (verified by bit-exact re-encode)"
+ },
+ "sample": [
+  {
+   "dataset": "030faa69-ff79-4d85-8630-7c874a114c19",
+   "matrix": "raw",
+   "chunk": 0,
+   "n_genes": 24018,
+   "value_dtype": "u16",
+   "nnz_per_cell": 2580.2,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0991
+  },
+  {
+   "dataset": "030faa69-ff79-4d85-8630-7c874a114c19",
+   "matrix": "raw",
+   "chunk": 2,
+   "n_genes": 24018,
+   "value_dtype": "u16",
+   "nnz_per_cell": 3054.5,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.093
+  },
+  {
+   "dataset": "030faa69-ff79-4d85-8630-7c874a114c19",
+   "matrix": "normed",
+   "chunk": 0,
+   "n_genes": 24018,
+   "value_dtype": "f32",
+   "nnz_per_cell": 2580.2,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1036
+  },
+  {
+   "dataset": "030faa69-ff79-4d85-8630-7c874a114c19",
+   "matrix": "normed",
+   "chunk": 2,
+   "n_genes": 24018,
+   "value_dtype": "f32",
+   "nnz_per_cell": 3054.5,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0965
+  },
+  {
+   "dataset": "234c23d0-d6cd-4612-a40d-e5811727564b",
+   "matrix": "raw",
+   "chunk": 0,
+   "n_genes": 32596,
+   "value_dtype": "u16",
+   "nnz_per_cell": 1583.5,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.109
+  },
+  {
+   "dataset": "234c23d0-d6cd-4612-a40d-e5811727564b",
+   "matrix": "raw",
+   "chunk": 2,
+   "n_genes": 32596,
+   "value_dtype": "u16",
+   "nnz_per_cell": 852.2,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1228
+  },
+  {
+   "dataset": "234c23d0-d6cd-4612-a40d-e5811727564b",
+   "matrix": "normed",
+   "chunk": 0,
+   "n_genes": 32596,
+   "value_dtype": "f32",
+   "nnz_per_cell": 1515.8,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1161
+  },
+  {
+   "dataset": "234c23d0-d6cd-4612-a40d-e5811727564b",
+   "matrix": "normed",
+   "chunk": 2,
+   "n_genes": 32596,
+   "value_dtype": "f32",
+   "nnz_per_cell": 818.1,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1295
+  },
+  {
+   "dataset": "43a1506b-aa9e-46a3-b288-d210f4595ddf",
+   "matrix": "raw",
+   "chunk": 0,
+   "n_genes": 19865,
+   "value_dtype": "u16",
+   "nnz_per_cell": 3045.3,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1034
+  },
+  {
+   "dataset": "43a1506b-aa9e-46a3-b288-d210f4595ddf",
+   "matrix": "raw",
+   "chunk": 2,
+   "n_genes": 19865,
+   "value_dtype": "u16",
+   "nnz_per_cell": 2843.8,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0975
+  },
+  {
+   "dataset": "43a1506b-aa9e-46a3-b288-d210f4595ddf",
+   "matrix": "normed",
+   "chunk": 0,
+   "n_genes": 19865,
+   "value_dtype": "f32",
+   "nnz_per_cell": 3045.3,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1153
+  },
+  {
+   "dataset": "43a1506b-aa9e-46a3-b288-d210f4595ddf",
+   "matrix": "normed",
+   "chunk": 2,
+   "n_genes": 19865,
+   "value_dtype": "f32",
+   "nnz_per_cell": 2843.8,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1122
+  },
+  {
+   "dataset": "644a578d-ffdc-446b-9679-e7ab4c919c13",
+   "matrix": "raw",
+   "chunk": 0,
+   "n_genes": 21947,
+   "value_dtype": "u16",
+   "nnz_per_cell": 1123.7,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1166
+  },
+  {
+   "dataset": "644a578d-ffdc-446b-9679-e7ab4c919c13",
+   "matrix": "raw",
+   "chunk": 2,
+   "n_genes": 21947,
+   "value_dtype": "u16",
+   "nnz_per_cell": 997.7,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.119
+  },
+  {
+   "dataset": "644a578d-ffdc-446b-9679-e7ab4c919c13",
+   "matrix": "normed",
+   "chunk": 0,
+   "n_genes": 21947,
+   "value_dtype": "f32",
+   "nnz_per_cell": 1070.9,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1279
+  },
+  {
+   "dataset": "644a578d-ffdc-446b-9679-e7ab4c919c13",
+   "matrix": "normed",
+   "chunk": 2,
+   "n_genes": 21947,
+   "value_dtype": "f32",
+   "nnz_per_cell": 985.6,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1305
+  },
+  {
+   "dataset": "85c60876-7f35-40c5-a256-7808d84c6ba5",
+   "matrix": "raw",
+   "chunk": 0,
+   "n_genes": 32330,
+   "value_dtype": "u16",
+   "nnz_per_cell": 2371.0,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0944
+  },
+  {
+   "dataset": "85c60876-7f35-40c5-a256-7808d84c6ba5",
+   "matrix": "raw",
+   "chunk": 2,
+   "n_genes": 32330,
+   "value_dtype": "u16",
+   "nnz_per_cell": 2656.0,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0921
+  },
+  {
+   "dataset": "85c60876-7f35-40c5-a256-7808d84c6ba5",
+   "matrix": "normed",
+   "chunk": 0,
+   "n_genes": 32330,
+   "value_dtype": "f32",
+   "nnz_per_cell": 2371.0,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0949
+  },
+  {
+   "dataset": "85c60876-7f35-40c5-a256-7808d84c6ba5",
+   "matrix": "normed",
+   "chunk": 2,
+   "n_genes": 32330,
+   "value_dtype": "f32",
+   "nnz_per_cell": 2656.0,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0931
+  },
+  {
+   "dataset": "9ea52f85-a35e-4b5b-9207-e2f1de7dbbcd",
+   "matrix": "raw",
+   "chunk": 0,
+   "n_genes": 18736,
+   "value_dtype": "u16",
+   "nnz_per_cell": 4514.0,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1088
+  },
+  {
+   "dataset": "9ea52f85-a35e-4b5b-9207-e2f1de7dbbcd",
+   "matrix": "raw",
+   "chunk": 2,
+   "n_genes": 18736,
+   "value_dtype": "u16",
+   "nnz_per_cell": 4938.9,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1022
+  },
+  {
+   "dataset": "9ea52f85-a35e-4b5b-9207-e2f1de7dbbcd",
+   "matrix": "normed",
+   "chunk": 0,
+   "n_genes": 18736,
+   "value_dtype": "f32",
+   "nnz_per_cell": 4514.0,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1092
+  },
+  {
+   "dataset": "9ea52f85-a35e-4b5b-9207-e2f1de7dbbcd",
+   "matrix": "normed",
+   "chunk": 2,
+   "n_genes": 18736,
+   "value_dtype": "f32",
+   "nnz_per_cell": 4938.9,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1026
+  },
+  {
+   "dataset": "c2876b1b-06d8-4d96-a56b-5304f815b99a",
+   "matrix": "raw",
+   "chunk": 0,
+   "n_genes": 35483,
+   "value_dtype": "u16",
+   "nnz_per_cell": 5506.2,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.097
+  },
+  {
+   "dataset": "c2876b1b-06d8-4d96-a56b-5304f815b99a",
+   "matrix": "raw",
+   "chunk": 10,
+   "n_genes": 35483,
+   "value_dtype": "u16",
+   "nnz_per_cell": 5505.1,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0969
+  },
+  {
+   "dataset": "c2876b1b-06d8-4d96-a56b-5304f815b99a",
+   "matrix": "normed",
+   "chunk": 0,
+   "n_genes": 35483,
+   "value_dtype": "f32",
+   "nnz_per_cell": 5506.2,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0996
+  },
+  {
+   "dataset": "c2876b1b-06d8-4d96-a56b-5304f815b99a",
+   "matrix": "normed",
+   "chunk": 10,
+   "n_genes": 35483,
+   "value_dtype": "f32",
+   "nnz_per_cell": 5505.1,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0996
+  },
+  {
+   "dataset": "e2a00644-0a48-4815-ae87-d562045114f5",
+   "matrix": "raw",
+   "chunk": 0,
+   "n_genes": 35467,
+   "value_dtype": "u16",
+   "nnz_per_cell": 2578.3,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1047
+  },
+  {
+   "dataset": "e2a00644-0a48-4815-ae87-d562045114f5",
+   "matrix": "raw",
+   "chunk": 2,
+   "n_genes": 35467,
+   "value_dtype": "u16",
+   "nnz_per_cell": 2829.5,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0987
+  },
+  {
+   "dataset": "e2a00644-0a48-4815-ae87-d562045114f5",
+   "matrix": "normed",
+   "chunk": 0,
+   "n_genes": 35467,
+   "value_dtype": "f32",
+   "nnz_per_cell": 2578.3,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1061
+  },
+  {
+   "dataset": "e2a00644-0a48-4815-ae87-d562045114f5",
+   "matrix": "normed",
+   "chunk": 2,
+   "n_genes": 35467,
+   "value_dtype": "f32",
+   "nnz_per_cell": 2829.5,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.0999
+  },
+  {
+   "dataset": "53ce2631-3646-4172-bbd9-38b0a44d8214",
+   "matrix": "raw",
+   "chunk": 0,
+   "n_genes": 29382,
+   "value_dtype": "u16",
+   "nnz_per_cell": 1973.7,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1085
+  },
+  {
+   "dataset": "53ce2631-3646-4172-bbd9-38b0a44d8214",
+   "matrix": "raw",
+   "chunk": 2,
+   "n_genes": 29382,
+   "value_dtype": "u16",
+   "nnz_per_cell": 1777.0,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1133
+  },
+  {
+   "dataset": "53ce2631-3646-4172-bbd9-38b0a44d8214",
+   "matrix": "normed",
+   "chunk": 0,
+   "n_genes": 29382,
+   "value_dtype": "f32",
+   "nnz_per_cell": 1973.7,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.113
+  },
+  {
+   "dataset": "53ce2631-3646-4172-bbd9-38b0a44d8214",
+   "matrix": "normed",
+   "chunk": 2,
+   "n_genes": 29382,
+   "value_dtype": "f32",
+   "nnz_per_cell": 1777.0,
+   "bit_exact_reencode": true,
+   "packed_vs_csr": 0.1175
+  }
+ ],
+ "raw": {
+  "cells": 73728,
+  "chunks": 18,
+  "nnz": 207792650,
+  "nnz_per_cell": 2818.4,
+  "steps": [
+   {
+    "step": "1a_csr_u32_f32",
+    "what": "Native CSR: u64 indptr + u32 indices + f32 values",
+    "bytes": 1662931168,
+    "bytes_per_cell": 22554.9,
+    "bits_per_nnz": 64.023,
+    "ratio_vs_csr": 1.0,
+    "x_smaller_than_csr": 1.0,
+    "ratio_vs_previous": null,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "1b_csr_u16_f32",
+    "what": "CSR with 2-byte column ids (all sampled matrices have <= 65536 genes)",
+    "bytes": 1247345868,
+    "bytes_per_cell": 16918.2,
+    "bits_per_nnz": 48.023,
+    "ratio_vs_csr": 0.7501,
+    "x_smaller_than_csr": 1.33,
+    "ratio_vs_previous": 0.7501,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "1c_csr_u16_stored_dtype",
+    "what": "CSR with u16 ids and the stored value dtype (u16 counts for raw, f32 for normed)",
+    "bytes": 831760568,
+    "bytes_per_cell": 11281.5,
+    "bits_per_nnz": 32.023,
+    "ratio_vs_csr": 0.5002,
+    "x_smaller_than_csr": 2.0,
+    "ratio_vs_previous": 0.6668,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "2_records_raw",
+    "what": "One record per cell: flags + nnz varint + raw u16 ids + raw values (no indptr)",
+    "bytes": 831391784,
+    "bytes_per_cell": 11276.5,
+    "bits_per_nnz": 32.009,
+    "ratio_vs_csr": 0.5,
+    "x_smaller_than_csr": 2.0,
+    "ratio_vs_previous": 0.9996,
+    "how": "exact encoder output (renumber off, thresholds 0, values raw, sparse layout)"
+   },
+   {
+    "step": "3_gap_source_order",
+    "what": "Index sections gap-coded in source column order with the shared per-chunk rANS gap table",
+    "bytes": 534136466,
+    "bytes_per_cell": 7244.7,
+    "bits_per_nnz": 20.564,
+    "ratio_vs_csr": 0.3212,
+    "x_smaller_than_csr": 3.11,
+    "ratio_vs_previous": 0.6425,
+    "how": "exact encoder output (renumber off, default index threshold 0.6, values raw)"
+   },
+   {
+    "step": "4_gap_renumbered",
+    "what": "Genes renumbered by per-chunk presence, then gap-coded",
+    "bytes": 502182061,
+    "bytes_per_cell": 6811.3,
+    "bits_per_nnz": 19.334,
+    "ratio_vs_csr": 0.302,
+    "x_smaller_than_csr": 3.31,
+    "ratio_vs_previous": 0.9402,
+    "how": "exact encoder output (renumber on, values raw)"
+   },
+   {
+    "step": "5_values_dictionary",
+    "what": "Values dictionary-coded (distinct bit patterns + rANS ranks), per-record choice vs raw",
+    "bytes": 155711062,
+    "bytes_per_cell": 2112.0,
+    "bits_per_nnz": 5.995,
+    "ratio_vs_csr": 0.0936,
+    "x_smaller_than_csr": 10.68,
+    "ratio_vs_previous": 0.3101,
+    "how": "exact encoder output (values auto, no column modes)"
+   },
+   {
+    "step": "6_values_column_modes",
+    "what": "Column-mode coding offered (rank 0 = gene's per-chunk mode); writer default: floats only, chunk builds the table only when it pays",
+    "bytes": 155711062,
+    "bytes_per_cell": 2112.0,
+    "bits_per_nnz": 5.995,
+    "ratio_vs_csr": 0.0936,
+    "x_smaller_than_csr": 10.68,
+    "ratio_vs_previous": 1.0,
+    "how": "exact encoder output (raw: = step 5, since CpkWriter disables modes for integer dtypes; normed: values auto + column_modes 0.5)"
+   },
+   {
+    "step": "7_plus_chunk_metadata",
+    "what": "+ chunk metadata (header, 3 rANS tables, gene permutation, modes, offsets, lengths, kinds, cumulative nnz)",
+    "bytes": 158287638,
+    "bytes_per_cell": 2146.9,
+    "bits_per_nnz": 6.094,
+    "ratio_vs_csr": 0.0952,
+    "x_smaller_than_csr": 10.51,
+    "ratio_vs_previous": 1.0165,
+    "how": "exact (writer-default chunk, layout auto; metadata = meta_len)"
+   },
+   {
+    "step": "8_packed_4k_pages",
+    "what": "+ page packing to 4 KiB (padding so each record reads its minimum number of pages)",
+    "bytes": 168988490,
+    "bytes_per_cell": 2292.1,
+    "bits_per_nnz": 6.506,
+    "ratio_vs_csr": 0.1016,
+    "x_smaller_than_csr": 9.84,
+    "ratio_vs_previous": 1.0676,
+    "how": "exact (packed_len; re-encoded chunks are bit-identical to the stored chunks)"
+   },
+   {
+    "step": "8b_on_disk",
+    "what": "+ file overhead: chunk alignment to 4 KiB + 4 KiB superblock + 40 B/chunk directory, amortized per chunk",
+    "bytes": 169030742,
+    "bytes_per_cell": 2292.6,
+    "bits_per_nnz": 6.508,
+    "ratio_vs_csr": 0.1016,
+    "x_smaller_than_csr": 9.84,
+    "ratio_vs_previous": 1.0003,
+    "how": "exact amortization of the real files"
+   }
+  ],
+  "sections": {
+   "record_headers": {
+    "bytes": 221184,
+    "per_cell": 3.0,
+    "note": "flags byte + nnz varint"
+   },
+   "indptr_removed": {
+    "bytes": 589968
+   },
+   "index_raw_u16": {
+    "bytes": 415585300,
+    "bits_per_nnz": 16.0
+   },
+   "index_gap_source_order": {
+    "bytes": 118329982,
+    "per_cell": 1605.0,
+    "bits_per_nnz": 4.556,
+    "with_index_threshold_1": 118307126,
+    "records_gap_coded": 73625
+   },
+   "index_gap_renumbered": {
+    "bytes": 86375577,
+    "per_cell": 1171.5,
+    "bits_per_nnz": 3.325,
+    "vs_source_order": 0.73,
+    "records_gap_coded": 73728
+   },
+   "zero_gap_fraction": {
+    "source_order": 0.2082,
+    "renumbered": 0.4869
+   },
+   "value_raw": {
+    "bytes": 415585300,
+    "bits_per_nnz": 16.0
+   },
+   "value_dictionary": {
+    "bytes": 69114301,
+    "per_cell": 937.4,
+    "bits_per_nnz": 2.661,
+    "forced_dictionary_every_record": 69114301
+   },
+   "value_writer_choice": {
+    "bytes": 69114301,
+    "per_cell": 937.4,
+    "bits_per_nnz": 2.661,
+    "vs_dictionary": 1.0
+   },
+   "value_column_modes_auto_all_dtypes": {
+    "bytes": 71008382,
+    "vs_dictionary": 1.0274,
+    "chunks_building_table": 14,
+    "mode_coded_records": 40528,
+    "note": "column modes offered to every chunk, incl. integer counts (the writer does not do this for integers)"
+   },
+   "value_column_modes_forced": {
+    "bytes": 73582465,
+    "vs_dictionary": 1.0646,
+    "note": "every record mode-coded against an always-built table (table bytes not included here)"
+   },
+   "mode_equal_fraction": 0.5376,
+   "writer_chunks_with_mode_table": 0,
+   "writer_mode_coded_records": 0,
+   "dense_records": 0,
+   "metadata": {
+    "total": 2576576,
+    "per_cell": 34.95,
+    "parts_per_cell": {
+     "header": 0.016,
+     "models": 0.375,
+     "dims": 13.554,
+     "modes": 0.0,
+     "offsets": 8.0,
+     "lengths": 4.0,
+     "kinds": 1.0,
+     "nnz": 8.002,
+     "align": 0.001
+    },
+    "share_of_chunk": 0.0163
+   },
+   "page_padding": {
+    "bytes": 10700852,
+    "per_cell": 145.14,
+    "share_of_packed": 0.0633,
+    "note": "includes padding the metadata to the first page boundary"
+   },
+   "file_overhead": {
+    "bytes": 42252,
+    "per_cell": 0.57
+   }
+  },
+  "contrast": {
+   "note": "Shared per-chunk statistics vs per-cell compression. All record-level numbers exclude page padding.",
+   "cellpack_records_shared_tables": {
+    "bytes": 155711062,
+    "per_cell": 2112.0
+   },
+   "cellpack_records_plus_metadata": {
+    "bytes": 158287638,
+    "per_cell": 2146.9
+   },
+   "per_cell_rans_records_only": {
+    "bytes": 180059167,
+    "per_cell": 2442.2,
+    "vs_shared": 1.1564,
+    "how": "exact encoder output: every cell encoded as its own 1-cell chunk (own rANS tables fitted to that cell; no renumbering, no modes); record bytes only, i.e. as if the per-cell tables were free"
+   },
+   "per_cell_rans_with_own_metadata": {
+    "bytes": 300383263,
+    "per_cell": 4074.2,
+    "vs_shared": 1.8977,
+    "how": "same, plus each 1-cell chunk's metadata (64 B header + 1536 B tables + per-cell tables); the format's tables are fixed-size, so this overstates a compact per-cell table"
+   },
+   "zstd3_per_cell": {
+    "bytes": 522589893,
+    "per_cell": 7088.1,
+    "vs_shared": 3.3562,
+    "how": "zstd level 3 on each cell's u16 source ids + stored-dtype values (no header)"
+   },
+   "zstd19_per_cell": {
+    "bytes": 494629365,
+    "per_cell": 6708.8,
+    "vs_shared": 3.1766
+   },
+   "zstd3_whole_chunk": {
+    "bytes": 348286209,
+    "vs_cellpack_packed": 2.061,
+    "how": "zstd level 3 over the whole chunk (u64 indptr + per-cell u16 ids + values): no per-cell random access"
+   },
+   "zstd19_whole_chunk": {
+    "bytes": 235436378,
+    "vs_cellpack_packed": 1.3932
+   }
+  }
+ },
+ "normed": {
+  "cells": 73728,
+  "chunks": 18,
+  "nnz": 207109598,
+  "nnz_per_cell": 2809.1,
+  "steps": [
+   {
+    "step": "1a_csr_u32_f32",
+    "what": "Native CSR: u64 indptr + u32 indices + f32 values",
+    "bytes": 1657466752,
+    "bytes_per_cell": 22480.8,
+    "bits_per_nnz": 64.023,
+    "ratio_vs_csr": 1.0,
+    "x_smaller_than_csr": 1.0,
+    "ratio_vs_previous": null,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "1b_csr_u16_f32",
+    "what": "CSR with 2-byte column ids (all sampled matrices have <= 65536 genes)",
+    "bytes": 1243247556,
+    "bytes_per_cell": 16862.6,
+    "bits_per_nnz": 48.023,
+    "ratio_vs_csr": 0.7501,
+    "x_smaller_than_csr": 1.33,
+    "ratio_vs_previous": 0.7501,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "1c_csr_u16_stored_dtype",
+    "what": "CSR with u16 ids and the stored value dtype (u16 counts for raw, f32 for normed)",
+    "bytes": 1243247556,
+    "bytes_per_cell": 16862.6,
+    "bits_per_nnz": 48.023,
+    "ratio_vs_csr": 0.7501,
+    "x_smaller_than_csr": 1.33,
+    "ratio_vs_previous": 1.0,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "2_records_raw",
+    "what": "One record per cell: flags + nnz varint + raw u16 ids + raw values (no indptr)",
+    "bytes": 1242878772,
+    "bytes_per_cell": 16857.6,
+    "bits_per_nnz": 48.009,
+    "ratio_vs_csr": 0.7499,
+    "x_smaller_than_csr": 1.33,
+    "ratio_vs_previous": 0.9997,
+    "how": "exact encoder output (renumber off, thresholds 0, values raw, sparse layout)"
+   },
+   {
+    "step": "3_gap_source_order",
+    "what": "Index sections gap-coded in source column order with the shared per-chunk rANS gap table",
+    "bytes": 946529846,
+    "bytes_per_cell": 12838.1,
+    "bits_per_nnz": 36.562,
+    "ratio_vs_csr": 0.5711,
+    "x_smaller_than_csr": 1.75,
+    "ratio_vs_previous": 0.7616,
+    "how": "exact encoder output (renumber off, default index threshold 0.6, values raw)"
+   },
+   {
+    "step": "4_gap_renumbered",
+    "what": "Genes renumbered by per-chunk presence, then gap-coded",
+    "bytes": 914594084,
+    "bytes_per_cell": 12405.0,
+    "bits_per_nnz": 35.328,
+    "ratio_vs_csr": 0.5518,
+    "x_smaller_than_csr": 1.81,
+    "ratio_vs_previous": 0.9663,
+    "how": "exact encoder output (renumber on, values raw)"
+   },
+   {
+    "step": "5_values_dictionary",
+    "what": "Values dictionary-coded (distinct bit patterns + rANS ranks), per-record choice vs raw",
+    "bytes": 160207407,
+    "bytes_per_cell": 2173.0,
+    "bits_per_nnz": 6.188,
+    "ratio_vs_csr": 0.0967,
+    "x_smaller_than_csr": 10.35,
+    "ratio_vs_previous": 0.1752,
+    "how": "exact encoder output (values auto, no column modes)"
+   },
+   {
+    "step": "6_values_column_modes",
+    "what": "Column-mode coding offered (rank 0 = gene's per-chunk mode); writer default: floats only, chunk builds the table only when it pays",
+    "bytes": 160452520,
+    "bytes_per_cell": 2176.3,
+    "bits_per_nnz": 6.198,
+    "ratio_vs_csr": 0.0968,
+    "x_smaller_than_csr": 10.33,
+    "ratio_vs_previous": 1.0015,
+    "how": "exact encoder output (raw: = step 5, since CpkWriter disables modes for integer dtypes; normed: values auto + column_modes 0.5)"
+   },
+   {
+    "step": "7_plus_chunk_metadata",
+    "what": "+ chunk metadata (header, 3 rANS tables, gene permutation, modes, offsets, lengths, kinds, cumulative nnz)",
+    "bytes": 163439736,
+    "bytes_per_cell": 2216.8,
+    "bits_per_nnz": 6.313,
+    "ratio_vs_csr": 0.0986,
+    "x_smaller_than_csr": 10.14,
+    "ratio_vs_previous": 1.0186,
+    "how": "exact (writer-default chunk, layout auto; metadata = meta_len)"
+   },
+   {
+    "step": "8_packed_4k_pages",
+    "what": "+ page packing to 4 KiB (padding so each record reads its minimum number of pages)",
+    "bytes": 174941272,
+    "bytes_per_cell": 2372.8,
+    "bits_per_nnz": 6.757,
+    "ratio_vs_csr": 0.1055,
+    "x_smaller_than_csr": 9.47,
+    "ratio_vs_previous": 1.0704,
+    "how": "exact (packed_len; re-encoded chunks are bit-identical to the stored chunks)"
+   },
+   {
+    "step": "8b_on_disk",
+    "what": "+ file overhead: chunk alignment to 4 KiB + 4 KiB superblock + 40 B/chunk directory, amortized per chunk",
+    "bytes": 174978134,
+    "bytes_per_cell": 2373.3,
+    "bits_per_nnz": 6.759,
+    "ratio_vs_csr": 0.1056,
+    "x_smaller_than_csr": 9.47,
+    "ratio_vs_previous": 1.0002,
+    "how": "exact amortization of the real files"
+   }
+  ],
+  "sections": {
+   "record_headers": {
+    "bytes": 221184,
+    "per_cell": 3.0,
+    "note": "flags byte + nnz varint"
+   },
+   "indptr_removed": {
+    "bytes": 589968
+   },
+   "index_raw_u16": {
+    "bytes": 414219196,
+    "bits_per_nnz": 16.0
+   },
+   "index_gap_source_order": {
+    "bytes": 117870270,
+    "per_cell": 1598.7,
+    "bits_per_nnz": 4.553,
+    "with_index_threshold_1": 117847414,
+    "records_gap_coded": 73625
+   },
+   "index_gap_renumbered": {
+    "bytes": 85934508,
+    "per_cell": 1165.6,
+    "bits_per_nnz": 3.319,
+    "vs_source_order": 0.7291,
+    "records_gap_coded": 73728
+   },
+   "zero_gap_fraction": {
+    "source_order": 0.2084,
+    "renumbered": 0.4877
+   },
+   "value_raw": {
+    "bytes": 828438392,
+    "bits_per_nnz": 32.0
+   },
+   "value_dictionary": {
+    "bytes": 74051715,
+    "per_cell": 1004.4,
+    "bits_per_nnz": 2.86,
+    "forced_dictionary_every_record": 74051715
+   },
+   "value_writer_choice": {
+    "bytes": 74296828,
+    "per_cell": 1007.7,
+    "bits_per_nnz": 2.87,
+    "vs_dictionary": 1.0033
+   },
+   "value_column_modes_auto_all_dtypes": {
+    "bytes": 74296828,
+    "vs_dictionary": 1.0033,
+    "chunks_building_table": 4,
+    "mode_coded_records": 12593,
+    "note": "column modes offered to every chunk, incl. integer counts (the writer does not do this for integers)"
+   },
+   "value_column_modes_forced": {
+    "bytes": 74731058,
+    "vs_dictionary": 1.0092,
+    "note": "every record mode-coded against an always-built table (table bytes not included here)"
+   },
+   "mode_equal_fraction": 0.0768,
+   "writer_chunks_with_mode_table": 4,
+   "writer_mode_coded_records": 12593,
+   "dense_records": 0,
+   "metadata": {
+    "total": 2987216,
+    "per_cell": 40.52,
+    "parts_per_cell": {
+     "header": 0.016,
+     "models": 0.375,
+     "dims": 13.554,
+     "modes": 5.57,
+     "offsets": 8.0,
+     "lengths": 4.0,
+     "kinds": 1.0,
+     "nnz": 8.002,
+     "align": 0.001
+    },
+    "share_of_chunk": 0.0183
+   },
+   "page_padding": {
+    "bytes": 11501536,
+    "per_cell": 156.0,
+    "share_of_packed": 0.0657,
+    "note": "includes padding the metadata to the first page boundary"
+   },
+   "file_overhead": {
+    "bytes": 36862,
+    "per_cell": 0.5
+   }
+  },
+  "contrast": {
+   "note": "Shared per-chunk statistics vs per-cell compression. All record-level numbers exclude page padding.",
+   "cellpack_records_shared_tables": {
+    "bytes": 160452520,
+    "per_cell": 2176.3
+   },
+   "cellpack_records_plus_metadata": {
+    "bytes": 163439736,
+    "per_cell": 2216.8
+   },
+   "per_cell_rans_records_only": {
+    "bytes": 184471847,
+    "per_cell": 2502.1,
+    "vs_shared": 1.1497,
+    "how": "exact encoder output: every cell encoded as its own 1-cell chunk (own rANS tables fitted to that cell; no renumbering, no modes); record bytes only, i.e. as if the per-cell tables were free"
+   },
+   "per_cell_rans_with_own_metadata": {
+    "bytes": 304795943,
+    "per_cell": 4134.1,
+    "vs_shared": 1.8649,
+    "how": "same, plus each 1-cell chunk's metadata (64 B header + 1536 B tables + per-cell tables); the format's tables are fixed-size, so this overstates a compact per-cell table"
+   },
+   "zstd3_per_cell": {
+    "bytes": 563413482,
+    "per_cell": 7641.8,
+    "vs_shared": 3.5114,
+    "how": "zstd level 3 on each cell's u16 source ids + stored-dtype values (no header)"
+   },
+   "zstd19_per_cell": {
+    "bytes": 512653297,
+    "per_cell": 6953.3,
+    "vs_shared": 3.195
+   },
+   "zstd3_whole_chunk": {
+    "bytes": 408107083,
+    "vs_cellpack_packed": 2.3328,
+    "how": "zstd level 3 over the whole chunk (u64 indptr + per-cell u16 ids + values): no per-cell random access"
+   },
+   "zstd19_whole_chunk": {
+    "bytes": 274963882,
+    "vs_cellpack_packed": 1.5717
+   }
+  }
+ },
+ "pooled": {
+  "cells": 147456,
+  "chunks": 36,
+  "nnz": 414902248,
+  "nnz_per_cell": 2813.7,
+  "steps": [
+   {
+    "step": "1a_csr_u32_f32",
+    "what": "Native CSR: u64 indptr + u32 indices + f32 values",
+    "bytes": 3320397920,
+    "bytes_per_cell": 22517.9,
+    "bits_per_nnz": 64.023,
+    "ratio_vs_csr": 1.0,
+    "x_smaller_than_csr": 1.0,
+    "ratio_vs_previous": null,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "1b_csr_u16_f32",
+    "what": "CSR with 2-byte column ids (all sampled matrices have <= 65536 genes)",
+    "bytes": 2490593424,
+    "bytes_per_cell": 16890.4,
+    "bits_per_nnz": 48.023,
+    "ratio_vs_csr": 0.7501,
+    "x_smaller_than_csr": 1.33,
+    "ratio_vs_previous": 0.7501,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "1c_csr_u16_stored_dtype",
+    "what": "CSR with u16 ids and the stored value dtype (u16 counts for raw, f32 for normed)",
+    "bytes": 2075008124,
+    "bytes_per_cell": 14072.0,
+    "bits_per_nnz": 40.01,
+    "ratio_vs_csr": 0.6249,
+    "x_smaller_than_csr": 1.6,
+    "ratio_vs_previous": 0.8331,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "2_records_raw",
+    "what": "One record per cell: flags + nnz varint + raw u16 ids + raw values (no indptr)",
+    "bytes": 2074270556,
+    "bytes_per_cell": 14067.0,
+    "bits_per_nnz": 39.995,
+    "ratio_vs_csr": 0.6247,
+    "x_smaller_than_csr": 1.6,
+    "ratio_vs_previous": 0.9996,
+    "how": "exact encoder output (renumber off, thresholds 0, values raw, sparse layout)"
+   },
+   {
+    "step": "3_gap_source_order",
+    "what": "Index sections gap-coded in source column order with the shared per-chunk rANS gap table",
+    "bytes": 1480666312,
+    "bytes_per_cell": 10041.4,
+    "bits_per_nnz": 28.55,
+    "ratio_vs_csr": 0.4459,
+    "x_smaller_than_csr": 2.24,
+    "ratio_vs_previous": 0.7138,
+    "how": "exact encoder output (renumber off, default index threshold 0.6, values raw)"
+   },
+   {
+    "step": "4_gap_renumbered",
+    "what": "Genes renumbered by per-chunk presence, then gap-coded",
+    "bytes": 1416776145,
+    "bytes_per_cell": 9608.1,
+    "bits_per_nnz": 27.318,
+    "ratio_vs_csr": 0.4267,
+    "x_smaller_than_csr": 2.34,
+    "ratio_vs_previous": 0.9569,
+    "how": "exact encoder output (renumber on, values raw)"
+   },
+   {
+    "step": "5_values_dictionary",
+    "what": "Values dictionary-coded (distinct bit patterns + rANS ranks), per-record choice vs raw",
+    "bytes": 315918469,
+    "bytes_per_cell": 2142.5,
+    "bits_per_nnz": 6.091,
+    "ratio_vs_csr": 0.0951,
+    "x_smaller_than_csr": 10.51,
+    "ratio_vs_previous": 0.223,
+    "how": "exact encoder output (values auto, no column modes)"
+   },
+   {
+    "step": "6_values_column_modes",
+    "what": "Column-mode coding offered (rank 0 = gene's per-chunk mode); writer default: floats only, chunk builds the table only when it pays",
+    "bytes": 316163582,
+    "bytes_per_cell": 2144.1,
+    "bits_per_nnz": 6.096,
+    "ratio_vs_csr": 0.0952,
+    "x_smaller_than_csr": 10.5,
+    "ratio_vs_previous": 1.0008,
+    "how": "exact encoder output (raw: = step 5, since CpkWriter disables modes for integer dtypes; normed: values auto + column_modes 0.5)"
+   },
+   {
+    "step": "7_plus_chunk_metadata",
+    "what": "+ chunk metadata (header, 3 rANS tables, gene permutation, modes, offsets, lengths, kinds, cumulative nnz)",
+    "bytes": 321727374,
+    "bytes_per_cell": 2181.9,
+    "bits_per_nnz": 6.203,
+    "ratio_vs_csr": 0.0969,
+    "x_smaller_than_csr": 10.32,
+    "ratio_vs_previous": 1.0176,
+    "how": "exact (writer-default chunk, layout auto; metadata = meta_len)"
+   },
+   {
+    "step": "8_packed_4k_pages",
+    "what": "+ page packing to 4 KiB (padding so each record reads its minimum number of pages)",
+    "bytes": 343929762,
+    "bytes_per_cell": 2332.4,
+    "bits_per_nnz": 6.632,
+    "ratio_vs_csr": 0.1036,
+    "x_smaller_than_csr": 9.65,
+    "ratio_vs_previous": 1.069,
+    "how": "exact (packed_len; re-encoded chunks are bit-identical to the stored chunks)"
+   },
+   {
+    "step": "8b_on_disk",
+    "what": "+ file overhead: chunk alignment to 4 KiB + 4 KiB superblock + 40 B/chunk directory, amortized per chunk",
+    "bytes": 344008876,
+    "bytes_per_cell": 2333.0,
+    "bits_per_nnz": 6.633,
+    "ratio_vs_csr": 0.1036,
+    "x_smaller_than_csr": 9.65,
+    "ratio_vs_previous": 1.0002,
+    "how": "exact amortization of the real files"
+   }
+  ],
+  "sections": {
+   "record_headers": {
+    "bytes": 442368,
+    "per_cell": 3.0,
+    "note": "flags byte + nnz varint"
+   },
+   "indptr_removed": {
+    "bytes": 1179936
+   },
+   "index_raw_u16": {
+    "bytes": 829804496,
+    "bits_per_nnz": 16.0
+   },
+   "index_gap_source_order": {
+    "bytes": 236200252,
+    "per_cell": 1601.8,
+    "bits_per_nnz": 4.554,
+    "with_index_threshold_1": 236154540,
+    "records_gap_coded": 147250
+   },
+   "index_gap_renumbered": {
+    "bytes": 172310085,
+    "per_cell": 1168.6,
+    "bits_per_nnz": 3.322,
+    "vs_source_order": 0.7295,
+    "records_gap_coded": 147456
+   },
+   "zero_gap_fraction": {
+    "source_order": 0.2083,
+    "renumbered": 0.4873
+   },
+   "value_raw": {
+    "bytes": 1244023692,
+    "bits_per_nnz": 23.987
+   },
+   "value_dictionary": {
+    "bytes": 143166016,
+    "per_cell": 970.9,
+    "bits_per_nnz": 2.76,
+    "forced_dictionary_every_record": 143166016
+   },
+   "value_writer_choice": {
+    "bytes": 143411129,
+    "per_cell": 972.6,
+    "bits_per_nnz": 2.765,
+    "vs_dictionary": 1.0017
+   },
+   "value_column_modes_auto_all_dtypes": {
+    "bytes": 145305210,
+    "vs_dictionary": 1.0149,
+    "chunks_building_table": 18,
+    "mode_coded_records": 53121,
+    "note": "column modes offered to every chunk, incl. integer counts (the writer does not do this for integers)"
+   },
+   "value_column_modes_forced": {
+    "bytes": 148313523,
+    "vs_dictionary": 1.036,
+    "note": "every record mode-coded against an always-built table (table bytes not included here)"
+   },
+   "mode_equal_fraction": 0.3076,
+   "writer_chunks_with_mode_table": 4,
+   "writer_mode_coded_records": 12593,
+   "dense_records": 0,
+   "metadata": {
+    "total": 5563792,
+    "per_cell": 37.73,
+    "parts_per_cell": {
+     "header": 0.016,
+     "models": 0.375,
+     "dims": 13.554,
+     "modes": 2.785,
+     "offsets": 8.0,
+     "lengths": 4.0,
+     "kinds": 1.0,
+     "nnz": 8.002,
+     "align": 0.001
+    },
+    "share_of_chunk": 0.0173
+   },
+   "page_padding": {
+    "bytes": 22202388,
+    "per_cell": 150.57,
+    "share_of_packed": 0.0646,
+    "note": "includes padding the metadata to the first page boundary"
+   },
+   "file_overhead": {
+    "bytes": 79114,
+    "per_cell": 0.54
+   }
+  },
+  "contrast": {
+   "note": "Shared per-chunk statistics vs per-cell compression. All record-level numbers exclude page padding.",
+   "cellpack_records_shared_tables": {
+    "bytes": 316163582,
+    "per_cell": 2144.1
+   },
+   "cellpack_records_plus_metadata": {
+    "bytes": 321727374,
+    "per_cell": 2181.9
+   },
+   "per_cell_rans_records_only": {
+    "bytes": 364531014,
+    "per_cell": 2472.1,
+    "vs_shared": 1.153,
+    "how": "exact encoder output: every cell encoded as its own 1-cell chunk (own rANS tables fitted to that cell; no renumbering, no modes); record bytes only, i.e. as if the per-cell tables were free"
+   },
+   "per_cell_rans_with_own_metadata": {
+    "bytes": 605179206,
+    "per_cell": 4104.1,
+    "vs_shared": 1.881,
+    "how": "same, plus each 1-cell chunk's metadata (64 B header + 1536 B tables + per-cell tables); the format's tables are fixed-size, so this overstates a compact per-cell table"
+   },
+   "zstd3_per_cell": {
+    "bytes": 1086003375,
+    "per_cell": 7364.9,
+    "vs_shared": 3.4349,
+    "how": "zstd level 3 on each cell's u16 source ids + stored-dtype values (no header)"
+   },
+   "zstd19_per_cell": {
+    "bytes": 1007282662,
+    "per_cell": 6831.1,
+    "vs_shared": 3.186
+   },
+   "zstd3_whole_chunk": {
+    "bytes": 756393292,
+    "vs_cellpack_packed": 2.1993,
+    "how": "zstd level 3 over the whole chunk (u64 indptr + per-cell u16 ids + values): no per-cell random access"
+   },
+   "zstd19_whole_chunk": {
+    "bytes": 510400260,
+    "vs_cellpack_packed": 1.484
+   }
+  }
+ },
+ "normed_with_mode_table": {
+  "cells": 16384,
+  "chunks": 4,
+  "nnz": 23786043,
+  "nnz_per_cell": 1451.8,
+  "steps": [
+   {
+    "step": "1a_csr_u32_f32",
+    "what": "Native CSR: u64 indptr + u32 indices + f32 values",
+    "bytes": 190419448,
+    "bytes_per_cell": 11622.3,
+    "bits_per_nnz": 64.044,
+    "ratio_vs_csr": 1.0,
+    "x_smaller_than_csr": 1.0,
+    "ratio_vs_previous": null,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "1b_csr_u16_f32",
+    "what": "CSR with 2-byte column ids (all sampled matrices have <= 65536 genes)",
+    "bytes": 142847362,
+    "bytes_per_cell": 8718.7,
+    "bits_per_nnz": 48.044,
+    "ratio_vs_csr": 0.7502,
+    "x_smaller_than_csr": 1.33,
+    "ratio_vs_previous": 0.7502,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "1c_csr_u16_stored_dtype",
+    "what": "CSR with u16 ids and the stored value dtype (u16 counts for raw, f32 for normed)",
+    "bytes": 142847362,
+    "bytes_per_cell": 8718.7,
+    "bits_per_nnz": 48.044,
+    "ratio_vs_csr": 0.7502,
+    "x_smaller_than_csr": 1.33,
+    "ratio_vs_previous": 1.0,
+    "how": "exact (arithmetic)"
+   },
+   {
+    "step": "2_records_raw",
+    "what": "One record per cell: flags + nnz varint + raw u16 ids + raw values (no indptr)",
+    "bytes": 142765410,
+    "bytes_per_cell": 8713.7,
+    "bits_per_nnz": 48.017,
+    "ratio_vs_csr": 0.7497,
+    "x_smaller_than_csr": 1.33,
+    "ratio_vs_previous": 0.9994,
+    "how": "exact encoder output (renumber off, thresholds 0, values raw, sparse layout)"
+   },
+   {
+    "step": "3_gap_source_order",
+    "what": "Index sections gap-coded in source column order with the shared per-chunk rANS gap table",
+    "bytes": 112901711,
+    "bytes_per_cell": 6891.0,
+    "bits_per_nnz": 37.972,
+    "ratio_vs_csr": 0.5929,
+    "x_smaller_than_csr": 1.69,
+    "ratio_vs_previous": 0.7908,
+    "how": "exact encoder output (renumber off, default index threshold 0.6, values raw)"
+   },
+   {
+    "step": "4_gap_renumbered",
+    "what": "Genes renumbered by per-chunk presence, then gap-coded",
+    "bytes": 108341931,
+    "bytes_per_cell": 6612.7,
+    "bits_per_nnz": 36.439,
+    "ratio_vs_csr": 0.569,
+    "x_smaller_than_csr": 1.76,
+    "ratio_vs_previous": 0.9596,
+    "how": "exact encoder output (renumber on, values raw)"
+   },
+   {
+    "step": "5_values_dictionary",
+    "what": "Values dictionary-coded (distinct bit patterns + rANS ranks), per-record choice vs raw",
+    "bytes": 20742019,
+    "bytes_per_cell": 1266.0,
+    "bits_per_nnz": 6.976,
+    "ratio_vs_csr": 0.1089,
+    "x_smaller_than_csr": 9.18,
+    "ratio_vs_previous": 0.1914,
+    "how": "exact encoder output (values auto, no column modes)"
+   },
+   {
+    "step": "6_values_column_modes",
+    "what": "Column-mode coding offered (rank 0 = gene's per-chunk mode); writer default: floats only, chunk builds the table only when it pays",
+    "bytes": 20987132,
+    "bytes_per_cell": 1281.0,
+    "bits_per_nnz": 7.059,
+    "ratio_vs_csr": 0.1102,
+    "x_smaller_than_csr": 9.07,
+    "ratio_vs_previous": 1.0118,
+    "how": "exact encoder output (raw: = step 5, since CpkWriter disables modes for integer dtypes; normed: values auto + column_modes 0.5)"
+   },
+   {
+    "step": "7_plus_chunk_metadata",
+    "what": "+ chunk metadata (header, 3 rANS tables, gene permutation, modes, offsets, lengths, kinds, cumulative nnz)",
+    "bytes": 21953596,
+    "bytes_per_cell": 1339.9,
+    "bits_per_nnz": 7.384,
+    "ratio_vs_csr": 0.1153,
+    "x_smaller_than_csr": 8.67,
+    "ratio_vs_previous": 1.0461,
+    "how": "exact (writer-default chunk, layout auto; metadata = meta_len)"
+   },
+   {
+    "step": "8_packed_4k_pages",
+    "what": "+ page packing to 4 KiB (padding so each record reads its minimum number of pages)",
+    "bytes": 22869611,
+    "bytes_per_cell": 1395.9,
+    "bits_per_nnz": 7.692,
+    "ratio_vs_csr": 0.1201,
+    "x_smaller_than_csr": 8.33,
+    "ratio_vs_previous": 1.0417,
+    "how": "exact (packed_len; re-encoded chunks are bit-identical to the stored chunks)"
+   },
+   {
+    "step": "8b_on_disk",
+    "what": "+ file overhead: chunk alignment to 4 KiB + 4 KiB superblock + 40 B/chunk directory, amortized per chunk",
+    "bytes": 22880416,
+    "bytes_per_cell": 1396.5,
+    "bits_per_nnz": 7.695,
+    "ratio_vs_csr": 0.1202,
+    "x_smaller_than_csr": 8.32,
+    "ratio_vs_previous": 1.0005,
+    "how": "exact amortization of the real files"
+   }
+  ],
+  "sections": {
+   "record_headers": {
+    "bytes": 49152,
+    "per_cell": 3.0,
+    "note": "flags byte + nnz varint"
+   },
+   "indptr_removed": {
+    "bytes": 131104
+   },
+   "index_raw_u16": {
+    "bytes": 47572086,
+    "bits_per_nnz": 16.0
+   },
+   "index_gap_source_order": {
+    "bytes": 17708387,
+    "per_cell": 1080.8,
+    "bits_per_nnz": 5.956,
+    "with_index_threshold_1": 17708387,
+    "records_gap_coded": 16384
+   },
+   "index_gap_renumbered": {
+    "bytes": 13148607,
+    "per_cell": 802.5,
+    "bits_per_nnz": 4.422,
+    "vs_source_order": 0.7425,
+    "records_gap_coded": 16384
+   },
+   "zero_gap_fraction": {
+    "source_order": 0.0796,
+    "renumbered": 0.3461
+   },
+   "value_raw": {
+    "bytes": 95144172,
+    "bits_per_nnz": 32.0
+   },
+   "value_dictionary": {
+    "bytes": 7544260,
+    "per_cell": 460.5,
+    "bits_per_nnz": 2.537,
+    "forced_dictionary_every_record": 7544260
+   },
+   "value_writer_choice": {
+    "bytes": 7789373,
+    "per_cell": 475.4,
+    "bits_per_nnz": 2.62,
+    "vs_dictionary": 1.0325
+   },
+   "value_column_modes_auto_all_dtypes": {
+    "bytes": 7789373,
+    "vs_dictionary": 1.0325,
+    "chunks_building_table": 4,
+    "mode_coded_records": 12593,
+    "note": "column modes offered to every chunk, incl. integer counts (the writer does not do this for integers)"
+   },
+   "value_column_modes_forced": {
+    "bytes": 7855002,
+    "vs_dictionary": 1.0412,
+    "note": "every record mode-coded against an always-built table (table bytes not included here)"
+   },
+   "mode_equal_fraction": 0.6548,
+   "writer_chunks_with_mode_table": 4,
+   "writer_mode_coded_records": 12593,
+   "dense_records": 0,
+   "metadata": {
+    "total": 966464,
+    "per_cell": 58.99,
+    "parts_per_cell": {
+     "header": 0.016,
+     "models": 0.375,
+     "dims": 12.531,
+     "modes": 25.063,
+     "offsets": 8.0,
+     "lengths": 4.0,
+     "kinds": 1.0,
+     "nnz": 8.002,
+     "align": 0.001
+    },
+    "share_of_chunk": 0.044
+   },
+   "page_padding": {
+    "bytes": 916015,
+    "per_cell": 55.91,
+    "share_of_packed": 0.0401,
+    "note": "includes padding the metadata to the first page boundary"
+   },
+   "file_overhead": {
+    "bytes": 10805,
+    "per_cell": 0.66
+   }
+  },
+  "contrast": {
+   "note": "Shared per-chunk statistics vs per-cell compression. All record-level numbers exclude page padding.",
+   "cellpack_records_shared_tables": {
+    "bytes": 20987132,
+    "per_cell": 1281.0
+   },
+   "cellpack_records_plus_metadata": {
+    "bytes": 21953596,
+    "per_cell": 1339.9
+   },
+   "per_cell_rans_records_only": {
+    "bytes": 24362600,
+    "per_cell": 1487.0,
+    "vs_shared": 1.1608,
+    "how": "exact encoder output: every cell encoded as its own 1-cell chunk (own rANS tables fitted to that cell; no renumbering, no modes); record bytes only, i.e. as if the per-cell tables were free"
+   },
+   "per_cell_rans_with_own_metadata": {
+    "bytes": 51101288,
+    "per_cell": 3119.0,
+    "vs_shared": 2.3277,
+    "how": "same, plus each 1-cell chunk's metadata (64 B header + 1536 B tables + per-cell tables); the format's tables are fixed-size, so this overstates a compact per-cell table"
+   },
+   "zstd3_per_cell": {
+    "bytes": 63271424,
+    "per_cell": 3861.8,
+    "vs_shared": 3.0148,
+    "how": "zstd level 3 on each cell's u16 source ids + stored-dtype values (no header)"
+   },
+   "zstd19_per_cell": {
+    "bytes": 58475042,
+    "per_cell": 3569.0,
+    "vs_shared": 2.7862
+   },
+   "zstd3_whole_chunk": {
+    "bytes": 47539206,
+    "vs_cellpack_packed": 2.0787,
+    "how": "zstd level 3 over the whole chunk (u64 indptr + per-cell u16 ids + values): no per-cell random access"
+   },
+   "zstd19_whole_chunk": {
+    "bytes": 31192971,
+    "vs_cellpack_packed": 1.3639
+   }
+  },
+  "note": "normed chunks where the writer builds the column-mode table (log1p counts without per-cell size scaling); in the other normed datasets values are cell-size-scaled, almost never equal a gene's mode, and the encoder declines the table"
+ }
+}

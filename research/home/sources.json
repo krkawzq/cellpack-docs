@@ -1,0 +1,65 @@
+{
+  "note": "Frozen technical-report measurements from the experimental repository; not benchmarks of the current implementation.",
+  "sources": {
+    "compression_comparison_pooled.csv": {
+      "source": "CellPack-lab/technical-report/results/compression_comparison_pooled.csv",
+      "sha256": "13dc8c0bf3b351890679db525b56764fdc53466e81a15612f7ccc93aba1d42cd"
+    },
+    "gap_existing.csv": {
+      "source": "CellPack-lab/technical-report/results/gap_existing.csv",
+      "sha256": "4c641d101aa698086d2ca29c60d7d15fb466b8aa7a074f4a8db65fa781222bf1"
+    },
+    "loader_methods.csv": {
+      "source": "CellPack-lab/technical-report/results/loader_methods.csv",
+      "sha256": "07db1a147709c6cee1a552ec0d3bf55099cdfb3ebe85dc759e22a1f43ae92acf"
+    },
+    "model_compute.csv": {
+      "source": "CellPack-lab/technical-report/results/model_compute.csv",
+      "sha256": "4d27b0e42335c3a78e4166fa064f200812c28bf6574af8b2519999ed8c35a5dd"
+    },
+    "read_amplification.csv": {
+      "source": "CellPack-lab/technical-report/results/read_amplification.csv",
+      "sha256": "3d44f18298970855fef75aaca3f54fbb35b089d505202b8a4b7329ec5d3c8522"
+    },
+    "compression_granularity.csv": {
+      "source": "CellPack-lab/technical-report/results/compression_granularity.csv",
+      "sha256": "9ca30d6bddfbe5368c67f802eaf0da4e67a6e119c84a4ca5b18b2419d6844532"
+    },
+    "format_example.json": {
+      "source": "CellPack-lab/technical-report/results/format_example.json",
+      "sha256": "288e1ab27d21d898d4db5d28ba9239fb6de97899c10386f79c816d0576c9d1cd"
+    },
+    "loader_example.json": {
+      "source": "CellPack-lab/technical-report/results/loader_example.json",
+      "sha256": "4e89b8f50d9c862a409a9daf4266e0577605bf58270d0f5197e1178bfd9bea6d"
+    },
+    "billion_cell_online.csv": {
+      "source": "CellPack-lab/technical-report/results/billion_cell_online.csv",
+      "sha256": "f921489c0572f0469f7c85fa02f0bb2fbe6ec641395241f5c963f8ed5f134bb9"
+    },
+    "billion_cell_online.sources.json": {
+      "source": "CellPack-lab/technical-report/results/billion_cell_online.sources.json",
+      "sha256": "aa0df7c55f456713a09846246e46e70e6a275d34832250c3ad4bc33d782be396"
+    },
+    "cellpack_paper_values.json": {
+      "source": "CellPack-lab/technical-report/results/cellpack_paper_values.json",
+      "sha256": "285e11de6b4c83928a7ebf6e8d83d40d2405af9b67106115582da13adba0b93d"
+    },
+    "format_steps.json": {
+      "source": "CellPack/tmp/format-steps/results.json (measured on CellPack-lab/data/cellxgene-10m)",
+      "sha256": "1f274c2fd40fbc2b161b449c284396241fb459fa0d055ca638de8be77e3a7a63"
+    },
+    "cache_policy_panel2048_runs.csv": {
+      "source": "CellPack-lab/technical-report/results/cache_policy_panel2048_runs.csv",
+      "sha256": "bdcb5b763fe06c11712dc03ccd3f1c2fb17b50f1bb27e7c55230411f52b586fa"
+    },
+    "cache_policy_panel2048.json": {
+      "source": "CellPack-lab/technical-report/results/cache_policy_panel2048.json",
+      "sha256": "ed7649e7362a34c66db7947253dfab8b8eff14a17f033e8de1c876a9f5903d77"
+    },
+    "cache_policy_sim.csv": {
+      "source": "CellPack-lab/technical-report/results/cache_policy_sim.csv",
+      "sha256": "5bba1ec28f7c6cdf6ce86635983933fd1b191bc91ff90734631942558cf09cb6"
+    }
+  }
+}
